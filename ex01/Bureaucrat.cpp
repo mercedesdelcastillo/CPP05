@@ -58,6 +58,14 @@ void Bureaucrat::decrementGrade(int decrement)
     return;
 }
 
+void Bureaucrat::signForm(Form *form)
+{
+    if(form->beSigned(this))
+        std::cout << this->getName() << " signed " << form->getName() << std::endl;
+    else
+        std::cout << this->getName() << " coudn't sign " << form->getName() << " because doesn't have the apropiate grade" << std::endl;
+}
+
 // Getters
 std::string Bureaucrat::getName(void) const
 {

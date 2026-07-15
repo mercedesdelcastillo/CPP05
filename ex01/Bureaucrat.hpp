@@ -2,6 +2,8 @@
 # define BUREAUCRAT_HPP
 # include <iostream>
 
+class Form;
+
 class Bureaucrat
 {
     public:
@@ -19,6 +21,7 @@ class Bureaucrat
     //Public Methods
 		void incrementGrade(int increment);
 		void decrementGrade(int decrement);
+        void signForm(Form *form);
     //Setters
 		void setGrade(int grade);
     //Getters
