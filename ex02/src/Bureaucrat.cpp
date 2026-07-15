@@ -3,29 +3,29 @@
 //Constructors
 Bureaucrat::Bureaucrat(void) : _name("Default"), _grade(150)
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "A Default Bureaucrat was born" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-    std::cout << "Parametric constructor called" << std::endl;
+    std::cout << "A specific Bureaucrat was born" << std::endl;
     this->setGrade(grade);
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "A Bureaucrat was copied" << std::endl;
 }
 // Destructors
 Bureaucrat::~Bureaucrat(void)
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Bureaucrat retired" << std::endl;
 }
 
 // Overload Operators
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
-    std::cout << "Assignment operator called" << std::endl;
+    std::cout << "Not the best idea, you know have to nearly equals bureaucrats" << std::endl;
     if(this != &other)
     {
         this->_grade = other._grade;
@@ -56,6 +56,14 @@ void Bureaucrat::decrementGrade(int decrement)
     else
         std::cout << "The grade of " << this->_name << " still is " << this->_grade << std::endl;
     return;
+}
+
+void Bureaucrat::signForm(AForm *form)
+{
+    if(form->beSigned(*this))
+        std::cout << this->getName() << " signed " << form->getName() << std::endl;
+    else
+        std::cout << this->getName() << " coudn't sign " << form->getName() << " because doesn't have the apropiate grade" << std::endl;
 }
 
 // Getters

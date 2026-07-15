@@ -1,26 +1,26 @@
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 # include <iostream>
 # include <stdbool.h>
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
     public:
     //Constructors
-        Form(void);
-        Form(std::string name, int signgrade, int execgrade);
-        Form(const Form& other);
+        AForm(void);
+        AForm(std::string name, int signgrade, int execgrade);
+        AForm(const AForm& other);
 
     //Destructors
-        ~Form();
+        virtual ~AForm();
 
     //Overload Operators
-        Form &operator=(const Form &other);
+        AForm &operator=(const AForm &other);
     
     //Public Methods
-        bool beSigned(Bureaucrat &bureaucrat);
+        virtual bool beSigned(Bureaucrat &bureaucrat);
     
     //Setters
         void setSigned(bool state);
@@ -43,7 +43,7 @@ class Form
         };
 
 
-    private:
+    protected:
         std::string const _name;
         bool _signed;
         int const _signgrade;
@@ -51,7 +51,7 @@ class Form
         
 };
 
-std::ostream& operator<<(std::ostream& out, const Form &form);
+std::ostream& operator<<(std::ostream& out, const AForm &form);
 
 #endif
 

@@ -1,7 +1,7 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 # include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat
 {
@@ -20,7 +20,7 @@ class Bureaucrat
     //Public Methods
 		void incrementGrade(int increment);
 		void decrementGrade(int decrement);
-        void signForm(Form *form);
+        void signForm(AForm *form);
     //Setters
 		void setGrade(int grade);
     //Getters

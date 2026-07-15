@@ -22,7 +22,7 @@ class Bureaucrat
     //Setters
 		void setGrade(int grade);
     //Getters
-		std::string getName(void) const;
+		std::string const &getName(void) const;
 		int getGrade(void) const;
     private:
         std::string const	_name;

@@ -1,14 +1,14 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
 
 //Constructors
-Form::Form(void) : _name("Default"), _signed(false), _signgrade(150), _execgrade(150)
+AForm::AForm(void) : _name("Default"), _signed(false), _signgrade(150), _execgrade(150)
 {
-    std::cout << "A new Default form was created" << std::endl;
+    std::cout << "A new Default Aform was created" << std::endl;
 }
 
-Form::Form(std::string name, int signgrade, int execgrade) : _name(name), _signgrade(signgrade), _execgrade(execgrade)
+AForm::AForm(std::string name, int signgrade, int execgrade) : _name(name), _signgrade(signgrade), _execgrade(execgrade)
 {
     this->_signed = false;
     if(signgrade < 1 || execgrade < 1)
@@ -19,21 +19,20 @@ Form::Form(std::string name, int signgrade, int execgrade) : _name(name), _signg
     return;
 }
 
-
-Form::Form(const Form &other) : _name(other._name), _signed(other._signed), _signgrade(other._signgrade), _execgrade(other._execgrade)
+AForm::AForm(const AForm &other) : _name(other._name), _signed(other._signed), _signgrade(other._signgrade), _execgrade(other._execgrade)
 {
-    std::cout << "The form was copied" << std::endl;
+    std::cout << "The Aform was copied" << std::endl;
 }
 // Destructors
-Form::~Form(void)
+AForm::~AForm(void)
 {
-    std::cout << "The form was destroyed" << std::endl;
+    std::cout << "The Aform was destroyed" << std::endl;
 }
 
 // Overload Operators
-Form &Form::operator=(const Form &other)
+AForm &AForm::operator=(const AForm &other)
 {
-    std::cout << "Not a good idea, but the forms are a bit equal now" << std::endl;
+    std::cout << "Not a good idea, but the Aforms are a bit equal now" << std::endl;
     if(this != &other)
     {
         this->_signed = other._signed;
@@ -42,7 +41,7 @@ Form &Form::operator=(const Form &other)
 }
 
 // Public Methods
-bool Form::beSigned(Bureaucrat &bureaucrat)
+bool AForm::beSigned(Bureaucrat &bureaucrat)
 {
     if(bureaucrat.getGrade() <= this->getSigngrade())
     {
@@ -53,31 +52,31 @@ bool Form::beSigned(Bureaucrat &bureaucrat)
     return false;
 }
 // Getters
-std::string const &Form::getName(void) const
+std::string const &AForm::getName(void) const
 {
     return(_name);
 }
 
-bool Form::getSigned(void) const
+bool AForm::getSigned(void) const
 {
     return (_signed);
 }
-int Form::getSigngrade(void) const
+int AForm::getSigngrade(void) const
 {
     return (_signgrade);
 }
-int Form::getExecgrade(void) const
+int AForm::getExecgrade(void) const
 {
     return (_execgrade);
 }
 
 // Setters
-void Form::setSigned(bool state)
+void AForm::setSigned(bool state)
 {
     this->_signed = state;
 }
 
-std::ostream& operator<<(std::ostream& out, const Form &form)
+std::ostream& operator<<(std::ostream& out, const AForm &form)
 {
     out << "The form " << form.getName() << " needs a bureaucrat of grade " << form.getSigngrade() <<
         " to be signed and a bureaucrat of grade "<< form.getExecgrade() << " to be executed" << std::endl;
@@ -88,11 +87,11 @@ std::ostream& operator<<(std::ostream& out, const Form &form)
     return out;
 }
 
-const char *Form::GradeTooHighException::what() const throw()
+const char *AForm::GradeTooHighException::what() const throw()
 {
     return ("Exception! Grade too high for a form!");
 }
-const char *Form::GradeTooLowException::what() const throw()
+const char *AForm::GradeTooLowException::what() const throw()
 {
     return ("Exception! Grade too low for a form!");
 }

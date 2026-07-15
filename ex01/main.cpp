@@ -1,21 +1,68 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
-	Bureaucrat worker("Andy", 40);
+	
+	try
+	{
+		Bureaucrat worker("Andy", 40);
+		Form	form("Rules", 160, 40);
 
-
-	std::cout << worker;
-	worker.incrementGrade(20);
-	worker.incrementGrade(20);
-	worker.incrementGrade(20);
+		std::cout << worker;
+		std::cout << form;
+		worker.signForm(&form);
+		std::cout << form;
+	}		
+	catch(Form::GradeTooHighException e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    catch(Form::GradeTooLowException e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 
 	std::cout <<"\n------------\n\n";
-	Bureaucrat worker_def;
-	std::cout << worker_def;
-	worker_def.decrementGrade(2);
+	try
+	{
+		Bureaucrat worker("Andy", 40);
+		Form	form("Rules", 50, 40);
+
+		std::cout << worker;
+		std::cout << form;
+		worker.signForm(&form);
+		std::cout << form;
+	}		
+	catch(Form::GradeTooHighException e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    catch(Form::GradeTooLowException e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 
 	std::cout <<"\n------------\n\n";
-	Bureaucrat worker_cpy(worker);
-	std::cout << worker_cpy;
+	try
+	{
+		Bureaucrat worker("Andy", 40);
+		Form	*form = new Form("Rules", 50, 40);
+
+		std::cout << worker;
+		std::cout << *form;
+		worker.signForm(form);
+		std::cout << *form;
+		delete form;
+	}		
+	catch(Form::GradeTooHighException e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    catch(Form::GradeTooLowException e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+	return 0;
 }
