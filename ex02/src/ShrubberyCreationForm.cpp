@@ -38,7 +38,14 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 // Public Methods
 void    ShrubberyCreationForm::create_file(std::string name)
 {
+    std::ofstream wFile(name.c_str());
+	if(wFile.good() == false)
+	{
+		std::cout << "Error opening " << name << "\n";
+		return;
+	}
     
+    wFile.close();
 }
 
 // Getters
