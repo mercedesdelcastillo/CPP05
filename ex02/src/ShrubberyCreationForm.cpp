@@ -57,6 +57,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 // Public Methods
 void    ShrubberyCreationForm::create_file(std::string name)
 {
+    name.append("_shrubbery");
     std::ofstream wFile(name.c_str());
 	if(wFile.good() == false)
 	{
