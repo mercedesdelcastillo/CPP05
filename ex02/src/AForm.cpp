@@ -51,6 +51,21 @@ bool AForm::beSigned(Bureaucrat &bureaucrat)
     std::cout << "Bureaucrat does not have the apropiate grade" << std::endl;
     return false;
 }
+
+void AForm::execute(Bureaucrat const &executor, std::string target)
+{
+    if(!this->getSigned())
+    {
+        std::cout << "The form needs to be signed to be executed" << std::endl;
+        return;
+    }
+    if(executor.getGrade() > this->getExecgrade())
+    {
+        std::cout << "You need a bureaucrat of a higher grade to execute this form" << std::endl;
+        throw GradeTooLowException();
+    }
+    this->action(target);
+}
 // Getters
 std::string const &AForm::getName(void) const
 {
@@ -83,7 +98,7 @@ std::ostream& operator<<(std::ostream& out, const AForm &form)
     if(form.getSigned())
         out << "This form has already been signed" << std::endl;
     else
-        out << "This form needs to be signed" << std::endl;
+        out << "This form is not signed" << std::endl;
     return out;
 }
 

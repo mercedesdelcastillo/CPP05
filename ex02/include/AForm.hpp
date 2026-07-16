@@ -21,9 +21,12 @@ class AForm
     
     //Public Methods
         virtual bool beSigned(Bureaucrat &bureaucrat);
+        void execute(Bureaucrat const &executor, std::string target);
+        virtual void action(std::string target) = 0;
     
     //Setters
         void setSigned(bool state);
+        
 
     //Getters
         std::string const &getName(void) const;
@@ -43,7 +46,7 @@ class AForm
         };
 
 
-    protected:
+    private:
         std::string const _name;
         bool _signed;
         int const _signgrade;

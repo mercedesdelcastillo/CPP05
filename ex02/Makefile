@@ -5,7 +5,9 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude
 
 SRC = src/Bureaucrat.cpp \
 		src/AForm.cpp src/main.cpp \
-		src/ShrubberyCreationForm.cpp
+		src/ShrubberyCreationForm.cpp \
+		src/RobotomyRequestForm.cpp \
+		src/PresidentialPardonForm.cpp
 
 OBJ = $(SRC:src/%.cpp=%.o)
 

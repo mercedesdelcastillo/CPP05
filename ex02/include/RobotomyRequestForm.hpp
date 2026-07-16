@@ -1,12 +1,15 @@
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
 # include <iostream>
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
-class RobotomyRequestForm
+class RobotomyRequestForm : public AForm
 {
     public:
     //Constructors
         RobotomyRequestForm(void);
+        RobotomyRequestForm(std::string name, int signgrade, int execgrade);
         RobotomyRequestForm(const RobotomyRequestForm& other);
 
     //Destructors
@@ -16,7 +19,7 @@ class RobotomyRequestForm
         RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
     
     //Public Methods
-    
+        void action(std::string target);
     //Setters
 
     //Getters

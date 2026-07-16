@@ -4,6 +4,8 @@
 #include<string>
 #include <fstream>
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
+
 
 class ShrubberyCreationForm : public AForm
 {
@@ -20,7 +22,7 @@ class ShrubberyCreationForm : public AForm
         ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
     
     //Public Methods
-        void create_file(std::string name);
+        void action(std::string target);
     //Setters
 
     //Getters

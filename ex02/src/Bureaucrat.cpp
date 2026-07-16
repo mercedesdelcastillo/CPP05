@@ -89,12 +89,12 @@ void Bureaucrat::setGrade(int grade)
         else
             this->_grade = grade;
     }
-    catch(GradeTooHighException e)
+    catch(GradeTooHighException &e)
     {
         this->_grade = 1;
         std::cerr << e.what() << '\n';
     }
-    catch(GradeTooLowException e)
+    catch(GradeTooLowException &e)
     {
         this->_grade = 150;
         std::cerr << e.what() << '\n';
