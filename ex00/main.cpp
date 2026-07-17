@@ -18,4 +18,9 @@ int main()
 	std::cout <<"\n------------\n\n";
 	Bureaucrat worker_cpy(worker);
 	std::cout << worker_cpy;
+
+	std::cout <<"\n------------\n\n";
+	worker_def = worker;
+	std::cout << worker;
+	std::cout << worker_def;
 }

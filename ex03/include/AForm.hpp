@@ -1,7 +1,7 @@
 #ifndef AFORM_HPP
 # define AFORM_HPP
 # include <iostream>
-# include <stdbool.h>
+# include <stdbool.h> 
 
 class Bureaucrat;
 
@@ -10,8 +10,8 @@ class AForm
     public:
     //Constructors
         AForm(void);
-        AForm(const AForm& other);
         AForm(std::string name, int signgrade, int execgrade);
+        AForm(const AForm& other);
 
     //Destructors
         virtual ~AForm();
@@ -22,6 +22,7 @@ class AForm
     //Public Methods
         virtual void beSigned(Bureaucrat &bureaucrat);
         void execute(Bureaucrat const &executor) const;
+        virtual void action() const = 0;
     
     //Setters
         void setSigned(bool state);
@@ -62,8 +63,6 @@ class AForm
         int const _signgrade;
         int const _execgrade;
         
-        virtual void action() const = 0;
-
 };
 
 std::ostream& operator<<(std::ostream& out, const AForm &form);

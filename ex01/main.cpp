@@ -14,11 +14,11 @@ int main()
 		worker.signForm(&form);
 		std::cout << form;
 	}		
-	catch(Form::GradeTooHighException e)
+	catch(Form::GradeTooHighException &e)
     {
         std::cerr << e.what() << '\n';
     }
-    catch(Form::GradeTooLowException e)
+    catch(Form::GradeTooLowException &e)
     {
         std::cerr << e.what() << '\n';
     }
@@ -34,11 +34,11 @@ int main()
 		worker.signForm(&form);
 		std::cout << form;
 	}		
-	catch(Form::GradeTooHighException e)
+	catch(Form::GradeTooHighException &e)
     {
         std::cerr << e.what() << '\n';
     }
-    catch(Form::GradeTooLowException e)
+    catch(Form::GradeTooLowException &e)
     {
         std::cerr << e.what() << '\n';
     }
@@ -46,7 +46,7 @@ int main()
 	std::cout <<"\n------------\n\n";
 	try
 	{
-		Bureaucrat worker("Andy", 40);
+		Bureaucrat worker("Andy", 60);
 		Form	*form = new Form("Rules", 50, 40);
 
 		std::cout << worker;
@@ -55,14 +55,13 @@ int main()
 		std::cout << *form;
 		delete form;
 	}		
-	catch(Form::GradeTooHighException e)
+	catch(Form::GradeTooHighException &e)
     {
         std::cerr << e.what() << '\n';
     }
-    catch(Form::GradeTooLowException e)
+    catch(Form::GradeTooLowException &e)
     {
         std::cerr << e.what() << '\n';
     }
-
 	return 0;
 }

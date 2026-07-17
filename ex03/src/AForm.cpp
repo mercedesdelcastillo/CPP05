@@ -3,7 +3,7 @@
 
 
 //Constructors
-AForm::AForm(void) : _name("Default"), _signed(false), _signgrade(150), _execgrade(150) 
+AForm::AForm(void) : _name("Default"), _signed(false), _signgrade(150), _execgrade(150)
 {
     std::cout << "A new Default Aform was created" << std::endl;
 }
@@ -11,6 +11,10 @@ AForm::AForm(void) : _name("Default"), _signed(false), _signgrade(150), _execgra
 AForm::AForm(std::string name, int signgrade, int execgrade) : _name(name), _signgrade(signgrade), _execgrade(execgrade)
 {
     this->_signed = false;
+    if(signgrade < 1 || execgrade < 1)
+            throw GradeTooHighException();
+    else if(signgrade > 150 || execgrade > 150)
+        throw GradeTooLowException();
     std::cout << "A concrete form was created" << std::endl;
     return;
 }
@@ -91,11 +95,11 @@ std::ostream& operator<<(std::ostream& out, const AForm &form)
 
 const char *AForm::GradeTooHighException::what() const throw()
 {
-    return ("Exception! Grade too high!");
+    return ("Exception! Grade too high for a form!");
 }
 const char *AForm::GradeTooLowException::what() const throw()
 {
-    return ("Exception! Grade too low!");
+    return ("Exception! Grade too low for a form!");
 }
 
 const char *AForm::NotSignedExpeption::what() const throw()

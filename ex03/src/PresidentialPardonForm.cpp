@@ -8,7 +8,7 @@ PresidentialPardonForm::PresidentialPardonForm(void) : AForm("PresidentialPardon
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
-    std::cout << "A Presidential Form was created" << std::endl;
+    std::cout << "A Presidential with Target Form was created" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other) : AForm(other)
@@ -43,8 +43,6 @@ void PresidentialPardonForm::action() const
 // Getters
 
 // Setters
-
-
 
 
 

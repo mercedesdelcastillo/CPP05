@@ -28,7 +28,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreationFor
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
-    std::cout << "Shrubbery with Atributes Form was created" << std::endl;
+    std::cout << "A Shrubbery with Target Form was created" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : AForm(other)

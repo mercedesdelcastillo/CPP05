@@ -23,7 +23,7 @@ class RobotomyRequestForm : public AForm
     //Setters
 
     //Getters
-    
+
     private:
         std::string _target;        
 };

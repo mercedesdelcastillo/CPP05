@@ -20,10 +20,10 @@ class Form
         Form &operator=(const Form &other);
     
     //Public Methods
-        bool beSigned(Bureaucrat &bureaucrat);
+        void beSigned(Bureaucrat &bureaucrat);
     
     //Setters
-        void setSigned(bool state);
+        void setSigned(bool status);
 
     //Getters
         std::string const &getName(void) const;

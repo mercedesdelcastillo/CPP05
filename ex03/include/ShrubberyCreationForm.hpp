@@ -26,7 +26,7 @@ class ShrubberyCreationForm : public AForm
     //Setters
 
     //Getters
-    
+
     private:
         std::string _target;        
 };

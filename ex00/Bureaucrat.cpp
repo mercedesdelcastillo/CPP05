@@ -3,29 +3,29 @@
 //Constructors
 Bureaucrat::Bureaucrat(void) : _name("Default"), _grade(150)
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "A Default Bureaucrat was born" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-    std::cout << "Parametric constructor called" << std::endl;
+    std::cout << "A specific Bureaucrat was born" << std::endl;
     this->setGrade(grade);
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade)
 {
-    std::cout << "Copy constructor called" << std::endl;
+     std::cout << "A Bureaucrat was copied" << std::endl;
 }
 // Destructors
 Bureaucrat::~Bureaucrat(void)
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Bureaucrat retired" << std::endl;
 }
 
 // Overload Operators
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
-    std::cout << "Assignment operator called" << std::endl;
+    std::cout << "Not the best idea, you now have two nearly equals bureaucrats (different names, same grade)" << std::endl;
     if(this != &other)
     {
         this->_grade = other._grade;
@@ -81,12 +81,12 @@ void Bureaucrat::setGrade(int grade)
         else
             this->_grade = grade;
     }
-    catch(GradeTooHighException e)
+    catch(GradeTooHighException &e)
     {
         this->_grade = 1;
         std::cerr << e.what() << '\n';
     }
-    catch(GradeTooLowException e)
+    catch(GradeTooLowException &e)
     {
         this->_grade = 150;
         std::cerr << e.what() << '\n';
@@ -102,9 +102,9 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat &bureaucrat)
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return ("Exception! Grade too high!");
+    return ("Exception! Grade too high for a Bureaucrat!");
 }
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return ("Exception! Grade too low!");
+    return ("Exception! Grade too low for a Bureaucrat!");
 }

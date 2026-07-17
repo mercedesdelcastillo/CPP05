@@ -23,9 +23,9 @@ class PresidentialPardonForm : public AForm
     //Setters
 
     //Getters
-    
+
     private:
-        std::string _target;
+        std::string _target;        
 };
 
 #endif

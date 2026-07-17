@@ -25,7 +25,7 @@ Bureaucrat::~Bureaucrat(void)
 // Overload Operators
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
-    std::cout << "Not the best idea, you know have to nearly equals bureaucrats" << std::endl;
+    std::cout << "Not the best idea, you now have two nearly equals bureaucrats (different names, same grade)" << std::endl;
     if(this != &other)
     {
         this->_grade = other._grade;
@@ -60,10 +60,16 @@ void Bureaucrat::decrementGrade(int decrement)
 
 void Bureaucrat::signForm(Form *form)
 {
-    if(form->beSigned(*this))
+    try
+    {
+        form->beSigned(*this);
+    }
+    catch(Form::GradeTooLowException &e)
+    {
+        std::cerr << e.what() << '\n';
+        return;
+    }
         std::cout << this->getName() << " signed " << form->getName() << std::endl;
-    else
-        std::cout << this->getName() << " coudn't sign " << form->getName() << " because doesn't have the apropiate grade" << std::endl;
 }
 
 // Getters
@@ -89,12 +95,12 @@ void Bureaucrat::setGrade(int grade)
         else
             this->_grade = grade;
     }
-    catch(GradeTooHighException e)
+    catch(GradeTooHighException &e)
     {
         this->_grade = 1;
         std::cerr << e.what() << '\n';
     }
-    catch(GradeTooLowException e)
+    catch(GradeTooLowException &e)
     {
         this->_grade = 150;
         std::cerr << e.what() << '\n';
@@ -110,9 +116,9 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat &bureaucrat)
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return ("Exception! Grade too high!");
+    return ("Exception! Grade too high for a Bureaucrat!");
 }
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return ("Exception! Grade too low!");
+    return ("Exception! Grade too low for a Bureaucrat!");
 }

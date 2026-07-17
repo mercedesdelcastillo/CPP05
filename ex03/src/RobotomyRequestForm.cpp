@@ -6,9 +6,10 @@ RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", 72
 {
     std::cout << "A Robotomy Default Form was created" << std::endl;
 }
+
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
-    std::cout << "Robotomy with Atributes Form was created" << std::endl;
+    std::cout << "A Robotomy with Target Form was created" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm(other)
@@ -29,6 +30,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
     {
         this->setSigned(other.getSigned());
         this->_target = other._target;
+
     }
     return (*this);
 }

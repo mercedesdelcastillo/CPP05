@@ -33,7 +33,7 @@ Form::~Form(void)
 // Overload Operators
 Form &Form::operator=(const Form &other)
 {
-    std::cout << "Not a good idea, but the forms are a bit equal now" << std::endl;
+    std::cout << "Not a good idea, you can only copy the signed state between forms" << std::endl;
     if(this != &other)
     {
         this->_signed = other._signed;
@@ -42,15 +42,12 @@ Form &Form::operator=(const Form &other)
 }
 
 // Public Methods
-bool Form::beSigned(Bureaucrat &bureaucrat)
+void Form::beSigned(Bureaucrat &bureaucrat)
 {
     if(bureaucrat.getGrade() <= this->getSigngrade())
-    {
         this->setSigned(true);
-        return true;
-    }
-    std::cout << "Bureaucrat does not have the apropiate grade" << std::endl;
-    return false;
+    else
+        throw GradeTooLowException();
 }
 // Getters
 std::string const &Form::getName(void) const
@@ -72,9 +69,9 @@ int Form::getExecgrade(void) const
 }
 
 // Setters
-void Form::setSigned(bool state)
+void Form::setSigned(bool status)
 {
-    this->_signed = state;
+    this->_signed = status;
 }
 
 std::ostream& operator<<(std::ostream& out, const Form &form)
@@ -84,16 +81,16 @@ std::ostream& operator<<(std::ostream& out, const Form &form)
     if(form.getSigned())
         out << "This form has already been signed" << std::endl;
     else
-        out << "This form needs to be signed" << std::endl;
+        out << "This form is not signed" << std::endl;
     return out;
 }
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-    return ("Exception! Grade too high for a form!");
+    return ("Exception! Grade too high!");
 }
 const char *Form::GradeTooLowException::what() const throw()
 {
-    return ("Exception! Grade too low for a form!");
+    return ("Exception! Grade too low!");
 }
 
