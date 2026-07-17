@@ -29,29 +29,41 @@ Intern &Intern::operator=(const Intern &other)
 }
 
 // Public Methods
+AForm *makeRobot(std::string target)
+{
+    AForm *form = new RobotomyRequestForm(target);
+    return form;
+}
+
+AForm *makeShrubbery(std::string target)
+{
+    AForm *form = new ShrubberyCreationForm(target);
+    return form;
+}
+
+AForm *makePresident(std::string target)
+{
+    AForm *form = new PresidentialPardonForm(target);
+    return form;
+}
+
 AForm *Intern::makeForm(std::string name, std::string target)
 {
     if(name.empty() || target.empty())
         return NULL;
-    int i = 0;
     std::string type_forms[] = {"RobotomyRequestForm", "ShrubberyCreationForm", "PresidentialPardonForm"};
-    while (i < 3 && name != type_forms[i])
-		i++;
-    switch(i)
-    {
-        case 0:
-            std::cout << "Intern creates " << name << std::endl;
-            return(new RobotomyRequestForm(target));
-        case 1:
-            std::cout << "Intern creates " << name << std::endl;
-           return(new ShrubberyCreationForm(target));
-        case 2:
-            std::cout << "Intern creates " << name << std::endl;
-            return(new PresidentialPardonForm(target));
-        default:
-            std::cout << "Intern couldn't create " << name << std::endl;
-            return NULL;
-    }
+    AForm *(*all_forms[])(const std::string target) = {&makeRobot, &makeShrubbery, &makePresident};
+    for (int i = 0; i < 3; i++)
+	{
+		if (name == type_forms[i])
+		{
+			std::cout << "Intern creates " << name << std::endl;
+			return (all_forms[i](target));
+		}
+	}
+
+	std::cout << "Intern can not create a form called " << name << std::endl;
+	return (NULL);
 }
 // Getters
 
