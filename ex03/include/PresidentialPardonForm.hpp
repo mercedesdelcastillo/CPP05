@@ -11,21 +11,14 @@ class PresidentialPardonForm : public AForm
         PresidentialPardonForm(void);
         PresidentialPardonForm(std::string target);
         PresidentialPardonForm(const PresidentialPardonForm& other);
-
     //Destructors
         ~PresidentialPardonForm();
-
     //Overload Operators
         PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
-    
     //Public Methods
-    void action() const;
+        void action() const;
     //Setters
-
-    //Getters
-
-    private:
-        std::string _target;        
+    //Getters       
 };
 
 #endif

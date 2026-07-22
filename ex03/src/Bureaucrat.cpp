@@ -69,7 +69,7 @@ void Bureaucrat::signForm(AForm *form)
         std::cerr << e.what() << '\n';
         return;
     }
-        std::cout << this->getName() << " signed " << form->getName() << std::endl;
+    std::cout << this->getName() << " signed " << form->getName() << std::endl;
 }
 
 void Bureaucrat::executeForm(AForm const &form)

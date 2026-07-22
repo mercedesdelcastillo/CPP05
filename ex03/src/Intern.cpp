@@ -52,18 +52,18 @@ AForm *Intern::makeForm(std::string name, std::string target)
     if(name.empty() || target.empty())
         return NULL;
     std::string type_forms[] = {"RobotomyRequestForm", "ShrubberyCreationForm", "PresidentialPardonForm"};
-    AForm *(*all_forms[])(const std::string target) = {&makeRobot, &makeShrubbery, &makePresident};
+    AForm *(*all_forms[])(std::string target) = {makeRobot, makeShrubbery, makePresident};
+    AForm *ret = NULL;
     for (int i = 0; i < 3; i++)
 	{
 		if (name == type_forms[i])
 		{
 			std::cout << "Intern creates " << name << std::endl;
-			return (all_forms[i](target));
+			ret = all_forms[i](target);
 		}
-	}
-
-	std::cout << "Intern can not create a form called " << name << std::endl;
-	return (NULL);
+    }
+	std::cout << "Intern cannot create a form called " << name << std::endl;
+	return (ret);
 }
 // Getters
 

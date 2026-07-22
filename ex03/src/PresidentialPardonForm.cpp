@@ -1,12 +1,12 @@
 #include "PresidentialPardonForm.hpp"
 
 //Constructors
-PresidentialPardonForm::PresidentialPardonForm(void) : AForm("PresidentialPardonForm", 25, 5), _target("default target")
+PresidentialPardonForm::PresidentialPardonForm(void) : AForm("PresidentialPardonForm", "default target", 25, 5)
 {
     std::cout << "A Presidential Default Form was created" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", target, 25, 5)
 {
     std::cout << "A Presidential with Target Form was created" << std::endl;
 }
@@ -28,7 +28,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
     if(this != &other)
     {
         this->setSigned(other.getSigned());
-        this->_target = other._target;
+        this->setTarget(other.getTarget());
     }
     return (*this);
 }
@@ -36,7 +36,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 // Public Methods
 void PresidentialPardonForm::action() const
 {
-    std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+    std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
     return;
 }
 

@@ -21,12 +21,12 @@ std::string tree15 = "#       .---.        ./||\\.    .-.\n\n";
 std::string tree[] = {tree0, tree1, tree2, tree3, tree4, tree5, tree6, tree7, tree8, tree9, tree10, tree11, tree12, tree13, tree14, tree15};
 
 //Constructors
-ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreationForm", 145, 137), _target("default target")
+ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreationForm", "default target", 145, 137)
 {
     std::cout << "A Shrubbery Default Form was created" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", target, 145, 137)
 {
     std::cout << "A Shrubbery with Target Form was created" << std::endl;
 }
@@ -48,7 +48,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
     if(this != &other)
     {
         this->setSigned(other.getSigned());
-        this->_target = other._target;
+        this->setTarget(other.getTarget());
     }
     return (*this);
 }
@@ -56,7 +56,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 // Public Methods
 void    ShrubberyCreationForm::action() const
 {
-    std::string target = this->_target;
+    std::string target = this->getTarget();
     target.append("_shrubbery");
     std::ofstream wFile;
     wFile.open(target.c_str(), std::ios_base::app);

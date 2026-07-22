@@ -2,12 +2,12 @@
 #include <cstdlib>
 
 //Constructors
-RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", 72, 45), _target("default target")
+RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", "default target", 72, 45)
 {
     std::cout << "A Robotomy Default Form was created" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", target, 72, 45)
 {
     std::cout << "A Robotomy with Target Form was created" << std::endl;
 }
@@ -29,7 +29,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
     if(this != &other)
     {
         this->setSigned(other.getSigned());
-        this->_target = other._target;
+        this->setTarget(other.getTarget());
 
     }
     return (*this);
@@ -43,10 +43,10 @@ void RobotomyRequestForm::action() const
     if(chance == 1)
     {
         std::cout << ">>>DrilliNg NoiSEssSseESsSSsS<<<" << std::endl;
-        std::cout << this->_target << " has been robotomized" << std::endl;
+        std::cout << this->getTarget() << " has been robotomized" << std::endl;
     }
     else
-        std::cout << "Best luck next time robotomizing!" << std::endl;
+        std::cout << "Best luck next time robotomizing " << this->getTarget() << std::endl;
     return;
 }
 

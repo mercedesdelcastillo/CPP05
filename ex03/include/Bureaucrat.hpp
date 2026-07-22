@@ -10,13 +10,10 @@ class Bureaucrat
         Bureaucrat(void);
 		Bureaucrat(std::string name, int grade);
         Bureaucrat(const Bureaucrat& other);
-
     //Destructors
         ~Bureaucrat();
-
     //Overload Operators
-        Bureaucrat &operator=(const Bureaucrat &other);
-    
+        Bureaucrat &operator=(const Bureaucrat &other);    
     //Public Methods
 		void incrementGrade(int increment);
 		void decrementGrade(int decrement);

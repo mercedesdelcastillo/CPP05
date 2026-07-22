@@ -11,21 +11,14 @@ class RobotomyRequestForm : public AForm
         RobotomyRequestForm(void);
         RobotomyRequestForm(std::string target);
         RobotomyRequestForm(const RobotomyRequestForm& other);
-
     //Destructors
         ~RobotomyRequestForm();
-
     //Overload Operators
         RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
-    
     //Public Methods
         void action() const;
     //Setters
-
-    //Getters
-
-    private:
-        std::string _target;        
+    //Getters       
 };
 
 #endif
