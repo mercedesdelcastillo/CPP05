@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: medel-ca <medel-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/29 09:29:45 by medel-ca          #+#    #+#             */
+/*   Updated: 2026/07/29 09:51:54 by medel-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 //Constructors
@@ -8,8 +20,8 @@ Bureaucrat::Bureaucrat(void) : _name("Default"), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-    std::cout << "A specific Bureaucrat was born" << std::endl;
     this->setGrade(grade);
+    std::cout << "A specific Bureaucrat was born" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade)
@@ -25,7 +37,7 @@ Bureaucrat::~Bureaucrat(void)
 // Overload Operators
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
-    std::cout << "Not the best idea, you now have two nearly equals bureaucrats (different names, same grade)" << std::endl;
+    std::cout << "Not the best idea, now you have two nearly equal bureaucrats (different names, same grade)" << std::endl;
     if(this != &other)
     {
         this->_grade = other._grade;

@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: medel-ca <medel-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/29 09:30:11 by medel-ca          #+#    #+#             */
+/*   Updated: 2026/07/29 09:45:22 by medel-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
-
 
 //Constructors
 Form::Form(void) : _name("Default"), _signed(false), _signgrade(150), _execgrade(150)
@@ -8,9 +19,8 @@ Form::Form(void) : _name("Default"), _signed(false), _signgrade(150), _execgrade
     std::cout << "A new Default form was created" << std::endl;
 }
 
-Form::Form(std::string name, int signgrade, int execgrade) : _name(name), _signgrade(signgrade), _execgrade(execgrade)
+Form::Form(std::string name, int signgrade, int execgrade) : _name(name), _signed(false), _signgrade(signgrade), _execgrade(execgrade)
 {
-    this->_signed = false;
     if(signgrade < 1 || execgrade < 1)
             throw GradeTooHighException();
     else if(signgrade > 150 || execgrade > 150)

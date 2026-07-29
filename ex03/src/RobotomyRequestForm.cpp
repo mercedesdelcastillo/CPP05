@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: medel-ca <medel-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/29 09:32:29 by medel-ca          #+#    #+#             */
+/*   Updated: 2026/07/29 10:08:39 by medel-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 #include <cstdlib>
 
@@ -49,10 +61,3 @@ void RobotomyRequestForm::action() const
         std::cout << "Best luck next time robotomizing " << this->getTarget() << std::endl;
     return;
 }
-
-// Getters
-
-// Setters
-
-
-

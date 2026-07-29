@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: medel-ca <medel-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/29 09:31:09 by medel-ca          #+#    #+#             */
+/*   Updated: 2026/07/29 10:58:20 by medel-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include <cstdlib>
 
 int main()
 {
 	//AForm form;
 	//AForm *form = new RobotomyRequestForm();
-	//RobotomyRequestForm bad;
-	//std::cout << bad;
+	srand((unsigned)time(0));
 	try
 	{
 		Bureaucrat worker("Andy", 45);
@@ -21,6 +33,12 @@ int main()
 		{
 		//	form.execute(worker, "Enemy");
 			worker.signForm(&form);
+			form.execute(worker);
+			form.execute(worker);
+			form.execute(worker);
+			form.execute(worker);
+			form.execute(worker);
+			form.execute(worker);
 			form.execute(worker);
 			worker.executeForm(form);
 		}
@@ -42,18 +60,18 @@ int main()
         std::cerr << e.what() << '\n';
     }
 
-/*	std::cout <<"\n------------\n\n";
+	std::cout <<"\n------------\n\n";
 	try
 	{
 		Bureaucrat worker("Andy", 40);
-		ShrubberyCreationForm	form("\'Plant a tree\'", 140, 40);
+		ShrubberyCreationForm	form("Garden");
 		std::cout << worker;
 		std::cout << form;
 		try
 		{
 			worker.signForm(&form);
-			form.execute(worker, "Garden");
-			worker.executeForm(form, "Medow");
+			form.execute(worker);
+			worker.executeForm(form);
 		}
 		catch(AForm::NotSignedExpeption& e)
 		{
@@ -77,13 +95,13 @@ int main()
 	try
 	{
 		Bureaucrat worker("Andy", 10);
-		PresidentialPardonForm	form("\'Indulto\'", 25, 5);
+		PresidentialPardonForm	form("Mike");
 		std::cout << worker;
 		std::cout << form;
 		try
 		{
 			worker.signForm(&form);
-			form.execute(worker, "Friend");
+			form.execute(worker);
 			std::cout << form;
 		}
 		catch(AForm::NotSignedExpeption& e)
@@ -102,6 +120,6 @@ int main()
     catch(AForm::GradeTooLowException &e)
     {
         std::cerr << e.what() << '\n';
-    }*/
+    }
 	return 0;
 }

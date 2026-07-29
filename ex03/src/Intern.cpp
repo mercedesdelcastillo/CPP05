@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: medel-ca <medel-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/29 09:32:14 by medel-ca          #+#    #+#             */
+/*   Updated: 2026/07/29 10:11:52 by medel-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Intern.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
@@ -62,12 +74,9 @@ AForm *Intern::makeForm(std::string name, std::string target)
 			ret = all_forms[i](target);
 		}
     }
-	std::cout << "Intern cannot create a form called " << name << std::endl;
+    if(ret == NULL)
+    {
+        std::cout << "Intern cannot create a form called " << name << std::endl;	
+    }
 	return (ret);
 }
-// Getters
-
-// Setters
-
-
-

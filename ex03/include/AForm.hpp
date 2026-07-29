@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: medel-ca <medel-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/29 09:31:28 by medel-ca          #+#    #+#             */
+/*   Updated: 2026/07/29 10:02:37 by medel-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef AFORM_HPP
 # define AFORM_HPP
 # include <iostream>
@@ -55,8 +67,7 @@ class AForm
         std::string _target;
         bool _signed;
         int const _signgrade;
-        int const _execgrade;
-        
+        int const _execgrade;       
 };
 
 std::ostream& operator<<(std::ostream& out, const AForm &form);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: medel-ca <medel-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/29 09:30:00 by medel-ca          #+#    #+#             */
+/*   Updated: 2026/07/29 09:52:08 by medel-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 //Constructors
@@ -8,8 +20,8 @@ Bureaucrat::Bureaucrat(void) : _name("Default"), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-    std::cout << "A specific Bureaucrat was born" << std::endl;
     this->setGrade(grade);
+    std::cout << "A specific Bureaucrat was born" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade)

@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: medel-ca <medel-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/29 09:30:55 by medel-ca          #+#    #+#             */
+/*   Updated: 2026/07/29 09:48:32 by medel-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
-
 
 //Constructors
 AForm::AForm(void) : _name("Default"), _signed(false), _signgrade(150), _execgrade(150) 
@@ -8,9 +19,8 @@ AForm::AForm(void) : _name("Default"), _signed(false), _signgrade(150), _execgra
     std::cout << "A new Default Aform was created" << std::endl;
 }
 
-AForm::AForm(std::string name, int signgrade, int execgrade) : _name(name), _signgrade(signgrade), _execgrade(execgrade)
+AForm::AForm(std::string name, int signgrade, int execgrade) : _name(name), _signed(false), _signgrade(signgrade), _execgrade(execgrade)
 {
-    this->_signed = false;
     std::cout << "A concrete form was created" << std::endl;
     return;
 }

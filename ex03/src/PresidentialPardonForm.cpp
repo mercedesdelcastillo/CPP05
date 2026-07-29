@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: medel-ca <medel-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/29 09:32:23 by medel-ca          #+#    #+#             */
+/*   Updated: 2026/07/29 10:08:51 by medel-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PresidentialPardonForm.hpp"
 
 //Constructors
@@ -39,10 +51,3 @@ void PresidentialPardonForm::action() const
     std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
     return;
 }
-
-// Getters
-
-// Setters
-
-
-

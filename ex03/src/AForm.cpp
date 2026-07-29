@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: medel-ca <medel-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/29 09:32:03 by medel-ca          #+#    #+#             */
+/*   Updated: 2026/07/29 10:09:24 by medel-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
-
 
 //Constructors
 AForm::AForm(void) : _name("Default"), _target("Default target"), _signed(false), _signgrade(150), _execgrade(150)
@@ -115,4 +126,3 @@ const char *AForm::BuroGradeTooLowException::what() const throw()
 {
     return ("Exception! This bureaucrat grade is too low to execute this form");
 }
-

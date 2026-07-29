@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: medel-ca <medel-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/29 09:32:38 by medel-ca          #+#    #+#             */
+/*   Updated: 2026/07/29 10:07:45 by medel-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ShrubberyCreationForm.hpp"
 
 
@@ -73,10 +85,3 @@ void    ShrubberyCreationForm::action() const
     std::cout << "A tree was planted" << std::endl;
     return;
 }
-
-// Getters
-
-// Setters
-
-
-

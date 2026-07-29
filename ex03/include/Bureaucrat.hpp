@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: medel-ca <medel-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/29 09:31:33 by medel-ca          #+#    #+#             */
+/*   Updated: 2026/07/29 10:03:59 by medel-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 # include <iostream>
-#include "AForm.hpp"
+# include "AForm.hpp"
 
 class Bureaucrat
 {
@@ -36,8 +48,7 @@ class Bureaucrat
         {
             public:
                 virtual const char *what() const throw();
-        };
-        
+        };        
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat &bureaucrat);

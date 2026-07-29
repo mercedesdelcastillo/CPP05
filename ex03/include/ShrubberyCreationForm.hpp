@@ -1,11 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: medel-ca <medel-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/29 09:31:58 by medel-ca          #+#    #+#             */
+/*   Updated: 2026/07/29 10:04:55 by medel-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
-#include<iostream>
-#include<string>
-#include <fstream>
-#include "AForm.hpp"
-#include "Bureaucrat.hpp"
-
+# include <fstream>
+# include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm
 {

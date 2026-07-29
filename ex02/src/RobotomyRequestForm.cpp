@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: medel-ca <medel-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/29 09:31:17 by medel-ca          #+#    #+#             */
+/*   Updated: 2026/07/29 10:54:26 by medel-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 #include <cstdlib>
 
@@ -33,10 +45,10 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
     return (*this);
 }
 
+
 // Public Methods
 void RobotomyRequestForm::action() const
 {
-    srand(time(0));
     int chance = rand() % 2;
     if(chance == 1)
     {
